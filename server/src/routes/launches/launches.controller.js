@@ -2,7 +2,7 @@ const {
   geAllLaunches,
   addNewLaunch,
   existsLaunchWithId,
-  aboutLaunchById,
+  abortLaunchById,
 } = require("../../model/launches.model");
 
 function httpGetAllLaunches(req, res) {
@@ -31,7 +31,7 @@ function httpAbortLaunch(req, res) {
   if (!existsLaunchWithId(launchId)) {
     return res.status(400).json({ error: "Launch Not Found" });
   }
-  const aborted = aboutLaunchById(launchId);
+  const aborted = abortLaunchById(launchId);
   return res.status(200).json(aborted);
 }
 module.exports = {

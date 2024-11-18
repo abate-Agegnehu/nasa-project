@@ -35,7 +35,7 @@ function addNewLaunch(launch) {
   );
 }
 
-function aboutLaunchById(launchId) {
+function abortLaunchById(launchId) {
   const aborted = launches.get(launchId);
   aborted.upcoming = false;
   aborted.success = false;
@@ -46,5 +46,5 @@ module.exports = {
   geAllLaunches,
   addNewLaunch,
   existsLaunchWithId,
-  aboutLaunchById,
+  abortLaunchById,
 };
